@@ -213,7 +213,7 @@ func main() {
 					fmt.Println(err)
 				}
 				if string(plaintext) != "" {
-					fmt.Println(URL, " | ", USERNAME, " | ", string(plaintext))
+					fmt.Println("<", URL, "> | ", USERNAME, " | ", string(plaintext))
 
 				}
 			} else { // It the masterkey hasn't been requested yet, then gets it.

